@@ -78,7 +78,7 @@ public class PostServiceImpl implements PostService{
 		post.setContent(postDto.getContent());
 		if( postDto.getImageName() == null || postDto.getImageName().equals(""))
 		{
-		post.setImageName("default.jpg");
+		post.setImageName(post.getImageName());
 		}
 		else {
 			post.setImageName(postDto.getImageName());
