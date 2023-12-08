@@ -217,24 +217,22 @@ public class PostController {
 						@PathVariable("postId") Integer postId) throws Exception
 				{
 					PostDto postDto = postService.getPostById(postId);
-
-					String fileName = fileService.uploadImage(path, image);
+										
+					Path filepath = Paths.get(File.separator  + path + File.separator + postDto.getImageName());
 					
-					Path filepath = Paths.get(path + File.separator + postDto.getImageName());
+					System.out.println("filepath: " + filepath);
 					
-					if(Files.exists(filepath))
-					{
 						try {
 							
-							Files.delete(filepath);
+							Files.deleteIfExists(filepath);
 							
 						} catch (IOException e) {
 							
 							throw new ApiException("Failed to delete the Post Image");
 							
 						}
-					}
 					
+					String fileName = fileService.uploadImage(path, image);
 					
 					postDto.setImageName(fileName);
 					
