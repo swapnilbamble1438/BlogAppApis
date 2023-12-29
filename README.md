@@ -3,7 +3,7 @@
 - It is Backend Part, for Frontend Part see url: https://github.com/swapnilbamble1438/BlogAppApisReactGUI
   
 - Application to create posts and comments as well as go through the registration and logging user process using a JWT token.
-- Swagger implemenation is also done. means you can open it in Browser also
+- Swagger implemenation is also done. means you can check the Api's in Browser also
 
 ### It is SpringBoot Project. Build in Spring Tool Suite.
 
